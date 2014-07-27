@@ -3,20 +3,14 @@ run_analysis <- function() {
     
     ## Read the feature names (measurements)
     features <- read.table("features.txt")["V2"]
-    print (features)
-    
     ## Read the activity labels - walking, walking upstairs, etc.
     activityLabels <- read.table("activity_labels.txt")["V2"]
-    print (activityLabels)
-    
     ## Get the indexes of the columns we are after - mean, and S.D.
     indexesOfMeansAndStds <- grep("mean|std", features$V2) 
-    print (indexesOfMeansAndStds)
-    
+
     xTrain <- read.table("train/X_train.txt")
     ## label the xTrain data with the appropriate feature names
     names(xTrain) <- features$V2
-
     yTrain <- read.table("train/y_train.txt")
     names(yTrain) <- "labels"
     
@@ -47,7 +41,5 @@ run_analysis <- function() {
     tidyDataSet$Activity <- activityLabels[tidyDataSet$Activity,]
     
     setwd("../../")
-    write.table(tidyDataSet, file="human_activity_recognition_tiny.csv", sep=",", row.names=FALSE)
-    
+    write.table(tidyDataSet, file="human_activity_recognition_tiny.csv", sep=",", row.names=FALSE)   
 }
-run_analysis()

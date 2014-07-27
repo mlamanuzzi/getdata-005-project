@@ -20,7 +20,7 @@ With these data, the script:
 11. Extract the mean and SD column names for the x test data set (should be the same as x train)
 12. Creates a new training data set using subjects from step 9, y test from step 8, and the subset of x test containing the means and SDs
 13. Repeat step 12 for the test data set
-14. Combine the data from steps 12, 1
+14. Combine the data from steps 12, 13
 15. Create a tidy data set with the average of each activity for each subject for each feature
 16. Order the tidy data set
 17. Use the activity labels from step 2 to label the tidy data set
